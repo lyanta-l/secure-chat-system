@@ -1,6 +1,7 @@
 /**
  * 登录/注册组件
  * 提供用户认证界面
+ * 修复了git版本控制问题 - 现在可以正常跟踪前端文件更改
  */
 
 import React, { useState, useEffect } from 'react';
