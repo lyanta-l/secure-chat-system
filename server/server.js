@@ -56,6 +56,19 @@ wss.on('connection', (ws) => {
       if (data.type === 'message') {
         console.log(`消息: 从 ${data.from} 到 ${data.to}`);
         
+        const timestamp = new Date().toISOString();
+        
+        // 保存消息到数据库
+        db.run(
+          'INSERT INTO messages (from_user_id, to_user_id, encrypted_content, iv) VALUES (?, ?, ?, ?)',
+          [data.from, data.to, data.content, data.iv || 'placeholder'],
+          (err) => {
+            if (err) {
+              console.error('保存消息到数据库失败:', err);
+            }
+          }
+        );
+        
         // 转发给目标用户
         const targetWs = onlineUsers.get(data.to);
         if (targetWs && targetWs.readyState === WebSocket.OPEN) {
@@ -63,7 +76,7 @@ wss.on('connection', (ws) => {
             type: 'message',
             from: data.from,
             content: data.content,
-            timestamp: new Date().toISOString()
+            timestamp: timestamp
           }));
         }
       }
