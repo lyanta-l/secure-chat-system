@@ -37,3 +37,8 @@ coverage/
 *.tmp
 .cache/
 
+# PID 文件
+.server.pid
+.client.pid
+*.pid
+
