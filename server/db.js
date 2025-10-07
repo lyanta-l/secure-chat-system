@@ -59,6 +59,23 @@ function initDatabase() {
       console.log('✅ messages表已就绪');
     }
   });
+  
+  // 创建会话表（用于持久化token）
+  db.run(`
+    CREATE TABLE IF NOT EXISTS sessions (
+      token TEXT PRIMARY KEY,
+      user_id INTEGER NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      expires_at DATETIME NOT NULL,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `, (err) => {
+    if (err) {
+      console.error('创建sessions表失败:', err.message);
+    } else {
+      console.log('✅ sessions表已就绪');
+    }
+  });
 }
 
 /**
