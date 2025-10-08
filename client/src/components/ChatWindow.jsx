@@ -318,7 +318,7 @@ function ChatWindow({ selectedUser, onBack }) {
           <div className="chat-user-details">
             <span className="chat-username">{selectedUser.username}</span>
             <span className={`connection-status ${isConnected && isKeyReady ? 'connected' : 'disconnected'}`}>
-              {isConnected && isKeyReady ? '🔐 安全连接' : isConnected ? '🔄 密钥初始化中...' : '连接中...'}
+              {isConnected && isKeyReady ? '安全连接' : isConnected ? '密钥初始化中...' : '连接中...'}
             </span>
           </div>
         </div>

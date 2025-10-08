@@ -1,0 +1,114 @@
+/* Telegram风格欢迎界面 */
+.welcome-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #1e1e1e;
+  color: #ffffff;
+  position: relative;
+}
+
+.welcome-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(100, 181, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(100, 181, 246, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.welcome-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-icon {
+  margin-bottom: 24px;
+}
+
+.chat-icon {
+  font-size: 64px;
+  color: #64b5f6;
+  opacity: 0.8;
+}
+
+.welcome-content h1 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.welcome-subtitle {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.welcome-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.feature-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+  color: #64b5f6;
+  width: 20px;
+  text-align: center;
+}
+
+.feature-item span:last-child {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 20px;
+  }
+  
+  .welcome-content h1 {
+    font-size: 1.3rem;
+  }
+  
+  .feature-item {
+    padding: 10px 16px;
+  }
+}

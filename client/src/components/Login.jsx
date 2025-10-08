@@ -113,7 +113,7 @@ function Login({ onLogin }) {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h1>🔐 混合加密聊天系统</h1>
+        <h1>混合加密聊天系统</h1>
         <h2>{isLogin ? '登录' : '注册'}</h2>
 
         {error && <div className="error-message">{error}</div>}

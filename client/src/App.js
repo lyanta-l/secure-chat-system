@@ -5,8 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Login from './components/Login';
-import UserList from './components/UserList';
-import ChatWindow from './components/ChatWindow';
+import MainLayout from './components/MainLayout';
 import { WebSocketProvider } from './contexts/WebSocketContext';
 import axios from './utils/axiosConfig';
 import './App.css';
@@ -89,11 +88,11 @@ function App() {
   // 已登录，使用WebSocket Provider包裹所有需要WebSocket的组件
   return (
     <WebSocketProvider>
-      {selectedUser ? (
-        <ChatWindow selectedUser={selectedUser} onBack={handleBackToList} />
-      ) : (
-        <UserList onSelectUser={handleSelectUser} />
-      )}
+      <MainLayout 
+        selectedUser={selectedUser}
+        onSelectUser={handleSelectUser}
+        onBackToList={handleBackToList}
+      />
     </WebSocketProvider>
   );
 }
