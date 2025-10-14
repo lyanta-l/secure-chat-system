@@ -42,7 +42,7 @@ secure-chat-system/
 └── PROJECT_STRUCTURE.md    # 本文件
 ```
 
-## 🚀 快速启动
+##  快速启动
 
 ### 方式一：使用启动脚本（推荐）
 
@@ -78,12 +78,7 @@ node scripts/test-chat-system.js
 node scripts/verify-encryption.js
 ```
 
-## 📚 文档说明
 
-- **README.md** - 项目概览和主要文档
-- **USAGE_GUIDE.md** - 详细使用指南，包括所有功能说明
-- **PROJECT_PLAN.md** - 项目开发计划和架构设计
-- **fixes/** - 问题修复记录和解决方案
 
 ## 🔧 核心功能
 
@@ -105,40 +100,19 @@ node scripts/verify-encryption.js
 - 自动化功能测试
 - 加密功能验证
 
-## 🔒 安全特性
+## 安全特性
 
 1. **端到端加密** - 使用 ECDH + AES-256-GCM
 2. **密钥协商** - Diffie-Hellman 密钥交换
 3. **本地密钥存储** - 私钥仅存储在客户端
 4. **身份验证** - JWT token 认证
 
-## 📝 注意事项
+## 注意事项
 
 1. **PID 文件** - `.server.pid` 和 `.client.pid` 在系统运行时自动生成，已添加到 `.gitignore`
 2. **数据库文件** - `server/database.db` 在首次运行时自动创建
 3. **端口占用** - 默认使用 3000（前端）和 3001（后端）端口
 4. **浏览器支持** - 需要支持 Web Crypto API 的现代浏览器
 
-## 🔄 项目更新历史
 
-### v1.0 - 初始版本
-- 基础聊天功能
-- 端到端加密
-- 用户认证
-
-### v1.1 - 架构优化
-- 重新组织项目结构
-- 分离文档和脚本
-- 完善 Git 版本控制
-
-## 🐛 问题排查
-
-如遇到问题，请查看：
-1. `docs/fixes/` 目录下的修复记录
-2. 各子项目的 README.md
-3. 使用 `scripts/test-chat-system.js` 进行系统测试
-
-## 📞 技术支持
-
-如有问题，请查阅文档或提交 Issue。
 
