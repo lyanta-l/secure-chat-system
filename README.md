@@ -9,7 +9,30 @@
 
 ---
 
-##  快速启动
+## 👥 团队协作
+
+### 新成员快速开始
+```bash
+# 克隆项目
+git clone https://github.com/lyanta-l/secure-chat-system.git
+cd secure-chat-system
+
+# 查看快速开始指南
+cat QUICK_START.md
+
+# 查看详细协作文档
+cat TEAM_COLLABORATION.md
+```
+
+### 开发流程
+1. **创建功能分支**: `git checkout -b feature/功能名称`
+2. **开发并提交**: `git commit -m "feat: 功能描述"`
+3. **推送分支**: `git push origin feature/功能名称`
+4. **创建 Pull Request**: 在 GitHub 上请求代码审查
+
+---
+
+## 🚀 快速启动
 
 ### 方式一：一键启动（推荐）
 
