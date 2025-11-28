@@ -7,6 +7,7 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const WebSocket = require('ws');
+const path = require('path');
 const db = require('./db');
 
 // 创建Express应用
@@ -19,6 +20,7 @@ const wss = new WebSocket.Server({ server });
 // 中间件
 app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // 在线用户管理 Map<userId, WebSocket>
 const onlineUsers = new Map();
@@ -140,8 +142,10 @@ wss.on('connection', (ws) => {
 // 路由导入
 const authRoutes = require('./routes/auth');
 const messageRoutes = require('./routes/messages');
+const uploadRoutes = require('./routes/uploads');
 app.use('/api', authRoutes);
 app.use('/api', messageRoutes);
+app.use('/api', uploadRoutes);
 
 // 启动服务器
 const PORT = process.env.PORT || 3001;

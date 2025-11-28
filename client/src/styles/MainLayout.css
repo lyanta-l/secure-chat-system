@@ -28,18 +28,20 @@
 @media (max-width: 768px) {
   .main-layout {
     flex-direction: column;
+    height: 100vh;
   }
-  
+
   .sidebar {
     width: 100%;
-    height: auto;
-    max-height: 50vh;
+    height: 100vh;
+    max-height: none;
     border-right: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: none;
+    box-shadow: none;
   }
-  
+
   .main-content {
     flex: 1;
-    min-height: 50vh;
+    min-height: 100vh;
   }
 }
